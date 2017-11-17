@@ -5,20 +5,18 @@
 </head>
 <body>
 <img style="position: fixed; top: 0px; left: 0px;" src="cartela.png">
-<h1 style="position: fixed; top: 45px; left: 40px; font-size: 70px;">12</h1>
-<h1 style="position: fixed; top: 165px; left: 40px; font-size: 70px;">12</h1>
-<h1 style="position: fixed; top: 285px; left: 40px; font-size: 70px;">12</h1>
-<h1 style="position: fixed; top: 405px; left: 40px; font-size: 70px;">12</h1>
-<h1 style="position: fixed; top: 515px; left: 40px; font-size: 70px;">12</h1>
-<h1 style="position: fixed; top: 45px; left: 170px; font-size: 70px;">12</h1>
-<h1 style="position: fixed; top: 45px; left: 310px; font-size: 70px;">12</h1>
-<h1 style="position: fixed; top: 45px; left: 450px; font-size: 70px;">12</h1>
-<h1 style="position: fixed; top: 165px; left: 450px; font-size: 70px;">12</h1>
-<h1 style="position: fixed; top: 285px; left: 450px; font-size: 70px;">12</h1>
-<h1 style="position: fixed; top: 405px; left: 450px; font-size: 70px;">12</h1>
-<h1 style="position: fixed; top: 515px; left: 450px; font-size: 70px;">12</h1>
-<h1 style="position: fixed; top: 515px; left: 310px; font-size: 70px;">12</h1>
-<h1 style="position: fixed; top: 515px; left: 170px; font-size: 70px;">12</h1>
+<h1 style="position: fixed; top: 130px; left: 40px; font-size: 70px;"></h1>
+<h1 style="position: fixed; top: 255px; left: 40px; font-size: 70px;"></h1>
+<h1 style="position: fixed; top: 385px; left: 40px; font-size: 70px;"></h1>
+<h1 style="position: fixed; top: 515px; left: 40px; font-size: 70px;"></h1>
+<h1 style="position: fixed; top: 130px; left: 230px; font-size: 70px;"></h1>
+<h1 style="position: fixed; top: 255px; left: 230px; font-size: 70px;"></h1>
+<h1 style="position: fixed; top: 385px; left: 230px; font-size: 70px;"></h1>
+<h1 style="position: fixed; top: 515px; left: 230px; font-size: 70px;"></h1>
+<h1 style="position: fixed; top: 130px; left: 405px; font-size: 70px;"></h1>
+<h1 style="position: fixed; top: 255px; left: 405px; font-size: 70px;"></h1>
+<h1 style="position: fixed; top: 385px; left: 405px; font-size: 70px;"></h1>
+<h1 style="position: fixed; top: 515px; left: 405px; font-size: 70px;"></h1>
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-git.min.js"></script>
 <script type="text/javascript">
@@ -36,7 +34,6 @@
                     index = i;
                     break;}}return index;};}return indexOf.call(this, needle) > -1;};
 
-
         var getarr = function(elementos){
             var nextnumber = Math.floor(Math.random() * 55) + 1;
             while(contains.call(elementos, nextnumber)){
@@ -50,9 +47,7 @@
             arr[i] = getarr(arr);
             elementos[i].innerText = arr[i];
             console.log("arr", arr[i]);
-
         };
-
     });
 </script>
 </html>
