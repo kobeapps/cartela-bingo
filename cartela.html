@@ -1,86 +1,145 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>cartela</title>
-</head>
+  </head>
 
-<body>
-    <div id="bingo" style="height: 672px; width: 552px; position: fixed; left: 0px; top: 0px;">
-        <img style="position: fixed; top: 16px; left: 0px;" src="cartela.png">
-        <span style="position: fixed; top: 0px; left: 12px; font-size: 40px;"></span>
-        <h1 style="position: fixed; top: 130px; left: 40px; font-size: 70px;"></h1>
-        <h1 style="position: fixed; top: 255px; left: 40px; font-size: 70px;"></h1>
-        <h1 style="position: fixed; top: 385px; left: 40px; font-size: 70px;"></h1>
-        <h1 style="position: fixed; top: 515px; left: 40px; font-size: 70px;"></h1>
-        <h1 style="position: fixed; top: 130px; left: 230px; font-size: 70px;"></h1>
-        <h1 style="position: fixed; top: 255px; left: 230px; font-size: 70px;"></h1>
-        <h1 style="position: fixed; top: 385px; left: 230px; font-size: 70px;"></h1>
-        <h1 style="position: fixed; top: 515px; left: 230px; font-size: 70px;"></h1>
-        <h1 style="position: fixed; top: 130px; left: 405px; font-size: 70px;"></h1>
-        <h1 style="position: fixed; top: 255px; left: 405px; font-size: 70px;"></h1>
-        <h1 style="position: fixed; top: 385px; left: 405px; font-size: 70px;"></h1>
-        <h1 style="position: fixed; top: 515px; left: 405px; font-size: 70px;"></h1>
+  <body style="font-family: 'Lato', sans-serif">
+    <div
+      id="bingo"
+      style="height: 800px; width: 600px; position: fixed; left: 0px; top: 0px"
+    >
+      <img style="position: fixed; top: 0px; left: 0px" src="cartela.png" />
+      <span
+        style="
+          position: fixed;
+          top: 10px;
+          left: 12px;
+          font-size: 40px;
+          color: white;
+          font-weight: bold;
+        "
+      ></span>
+      <h6
+        style="
+          position: fixed;
+          top: 130px;
+          left: 20px;
+          font-size: 16px;
+          width: 550px;
+          font-weight: 400;
+        "
+      ></h6>
+      <h6
+        style="
+          position: fixed;
+          top: 350px;
+          left: 20px;
+          font-size: 16px;
+          width: 550px;
+          font-weight: 400;
+        "
+      ></h6>
+      <h6
+        style="
+          position: fixed;
+          top: 570px;
+          left: 20px;
+          font-size: 16px;
+          width: 550px;
+          font-weight: 400;
+        "
+      ></h6>
     </div>
-    <a id="download" href="#" style="position: fixed; right: 50px;">Download</a>
-</body>
-<script type="text/javascript" src="https://code.jquery.com/jquery-git.min.js"></script>
-<script type="text/javascript" src="html2canvas.min.js"></script>
-<script type="text/javascript">
+    <a id="download" href="#" style="position: fixed; right: 50px">Download</a>
+  </body>
+  <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-git.min.js"
+  ></script>
+  <script type="text/javascript" src="html2canvas.min.js"></script>
+  <script type="text/javascript">
     $(function () {
-        var elementos = $('h1');
+      var elementos = $("h6");
 
-        $("#download").on('click', function () {
-            const id = regenerate();
-            html2canvas(document.querySelector("#bingo")).then(canvas => {
-                var imgageData = canvas.toDataURL("image/png");
-                // Now browser starts downloading it instead of just showing it
-                var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
-                $("#download").attr("download", `bingo-${id}.png`).attr("href", newData);
-            });
+      $("#download").on("click", function () {
+        const id = regenerate();
+        html2canvas(document.querySelector("#bingo")).then((canvas) => {
+          var imgageData = canvas.toDataURL("image/png");
+          // Now browser starts downloading it instead of just showing it
+          var newData = imgageData.replace(
+            /^data:image\/png/,
+            "data:application/octet-stream"
+          );
+          $("#download")
+            .attr("download", `bingo-${id}.png`)
+            .attr("href", newData);
         });
+      });
 
-        var contains = function (needle) {
-            var findNaN = needle !== needle; var indexOf;
-            if (!findNaN && typeof Array.prototype.indexOf === 'function') {
-                indexOf = Array.prototype.indexOf;
-            } else {
-                indexOf = function (needle) {
-                    var i = -1, index = -1;
-                    for (i = 0; i < this.length; i++) {
-                        var item = this[i];
-                        if ((findNaN && item !== item) || item === needle) {
-                            index = i;
-                            break;
-                        }
-                    } return index;
-                };
-            } return indexOf.call(this, needle) > -1;
-        };
+      const risks = [
+        "<b>1. Injeção:</b> Falhas de injeção, como SQL, NoSQL, OS e injeção LDAP, ocorrem quando dados não confiáveis ​​são enviados a um intérprete como parte de um comando ou consulta. Os dados hostis do invasor podem induzir o intérprete a executar comandos indesejados ou acessar dados sem a autorização adequada.",
+        "<b>2. Autenticação fraca:</b> As funções do aplicativo relacionadas à autenticação e gerenciamento de sessão são muitas vezes implementadas incorretamente, permitindo que os invasores comprometam senhas, chaves ou tokens de sessão ou explorem outras falhas de implementação para assumir as identidades de outros usuários temporária ou permanentemente.",
+        "<b>3. Exposição de dados sensíveis:</b> Muitos aplicativos da web e APIs não protegem adequadamente dados confidenciais, como finanças, saúde e PII. Os invasores podem roubar ou modificar esses dados fracamente protegidos para conduzir fraude de cartão de crédito, roubo de identidade ou outros crimes. Os dados confidenciais podem ser comprometidos sem proteção extra, como criptografia em repouso ou em trânsito, e requerem precauções especiais quando trocados com o navegador.",
+        "<b>4. XML External entities (XXE):</b> Muitos processadores XML mais antigos ou mal configurados avaliam referências de entidades externas em documentos XML. As entidades externas podem ser usadas para divulgar arquivos internos usando o manipulador de URI de arquivo, compartilhamentos de arquivos internos, varredura de porta interna, execução remota de código e ataques de negação de serviço.",
+        "<b>5. Controle de acesso falho:</b> As restrições sobre o que os usuários autenticados têm permissão para fazer muitas vezes não são aplicadas de forma adequada. Os invasores podem explorar essas falhas para acessar funcionalidades e / ou dados não autorizados, como acessar contas de outros usuários, visualizar arquivos confidenciais, modificar dados de outros usuários, alterar direitos de acesso, etc.",
+        "<b>6. Configuração incorreta de segurança:</b> A configuração incorreta de segurança é o problema mais comum. Isso geralmente é o resultado de configurações padrão inseguras, configurações incompletas ou ad hoc, armazenamento em nuvem aberta, cabeçalhos HTTP configurados incorretamente e mensagens de erro detalhadas contendo informações confidenciais. Não apenas todos os sistemas operacionais, estruturas, bibliotecas e aplicativos devem ser configurados com segurança, mas também devem ser corrigidos / atualizados em tempo hábil.",
+        "<b>7. Cros-site scripting (XSS):</b> As falhas de XSS ocorrem sempre que um aplicativo inclui dados não confiáveis ​​em uma nova página da web sem validação ou escape adequado, ou atualiza uma página da web existente com dados fornecidos pelo usuário usando uma API do navegador que pode criar HTML ou JavaScript. O XSS permite que os invasores executem scripts no navegador da vítima, que podem sequestrar sessões do usuário, desfigurar sites ou redirecionar o usuário para sites maliciosos.",
+        "<b>8. Deserialização insegura:</b> A desserialização insegura geralmente leva à execução remota de código. Mesmo se as falhas de desserialização não resultarem na execução remota de código, elas podem ser usadas para realizar ataques, incluindo ataques de repetição, ataques de injeção e ataques de escalonamento de privilégios.",
+        "<b>9. Uso de componentes com vulnerabilidades conhecidas:</b> Componentes, como bibliotecas, estruturas e outros módulos de software, são executados com os mesmos privilégios do aplicativo. Se um componente vulnerável for explorado, esse tipo de ataque pode facilitar a perda de dados graves ou o controle do servidor. Aplicativos e APIs que usam componentes com vulnerabilidades conhecidas podem minar as defesas do aplicativo e permitir vários ataques e impactos.",
+        "<b>10. Logs e monitoramento insuficientes:</b> O registro e o monitoramento insuficientes, juntamente com a integração ausente ou ineficaz com a resposta a incidentes, permitem que os invasores ataquem ainda mais os sistemas, mantenham a persistência, se movam para mais sistemas e adulterem, extraiam ou destruam dados. A maioria dos estudos de violação mostra que o tempo para detectar uma violação é de mais de 200 dias, normalmente detectado por partes externas em vez de processos internos ou monitoramento."
+      ];
 
-        var getarr = function (elementos) {
-            var nextnumber = Math.floor(Math.random() * 30) + 1;
-            while (contains.call(elementos, nextnumber)) {
-                console.log("call", !contains.call(elementos, nextnumber), nextnumber);
-                nextnumber = Math.floor(Math.random() * 30) + 1;
+      var contains = function (needle) {
+        var findNaN = needle !== needle;
+        var indexOf;
+        if (!findNaN && typeof Array.prototype.indexOf === "function") {
+          indexOf = Array.prototype.indexOf;
+        } else {
+          indexOf = function (needle) {
+            var i = -1,
+              index = -1;
+            for (i = 0; i < this.length; i++) {
+              var item = this[i];
+              if ((findNaN && item !== item) || item === needle) {
+                index = i;
+                break;
+              }
             }
-            return nextnumber;
+            return index;
+          };
         }
+        return indexOf.call(this, needle) > -1;
+      };
 
-        var regenerate = function () {
-            var id = Math.floor(Math.random() * 100)
-            var arr = [0];
-            for (var i = elementos.length - 1; i >= 0; i--) {
-                arr[i] = getarr(arr);
-                elementos[i].innerText = arr[i];
-                console.log("arr", arr[i]);
-            };
-            $('span')[0].innerHTML = id
-            return id;
+      var getarr = function (elementos) {
+        var nextnumber = Math.floor(Math.random() * 10);
+        console.log("indexOf", elementos.indexOf(nextnumber));
+        while (elementos.indexOf(nextnumber) >= 0) {
+          console.log("call", !elementos.indexOf(nextnumber), nextnumber);
+          nextnumber = Math.floor(Math.random() * 10);
         }
+        return nextnumber;
+      };
 
-        regenerate();
+      var regenerate = function () {
+        var id = Math.floor(Math.random() * 100);
+        var arr = [0];
+        for (var i = 2; i >= 0; i--) {
+          arr[i] = getarr(arr);
+          elementos[i].innerHTML = risks[arr[i]];
+          console.log("arr", arr[i]);
+        }
+        $("span")[0].innerText = id;
+        return id;
+      };
+
+      regenerate();
     });
-</script>
-
+  </script>
 </html>
